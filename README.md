@@ -4,3 +4,4 @@ My project makes use of the Gremlins first person character.
 My project features background music (credit to American Football) and pickup sounds (Sound form Counter-Strike)
 My project makes ample use of lighting effects and the WorldEnvironment node to make a very ambient scene that accurately reflects the early morning.
 UI in my game is minimalistic, with a simple "Press E to interact" prompt that shows when coming close to an interactable object, as well as short instructions on the top left side of the screen.
+Textured items were made by me using Aseprite
