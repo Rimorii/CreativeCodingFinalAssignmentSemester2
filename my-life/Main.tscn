@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://dj75muvk5qvjb"]
+
+[ext_resource type="PackedScene" uid="uid://d1r1sf8ybt32j" path="res://bedroom.tscn" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://ccqha7qqtn4hn" path="res://Scripts/gremlins_fpc.tscn" id="2_uu6xs"]
+[ext_resource type="Texture2D" uid="uid://ndliw3gta57x" path="res://Textures/Laptop.png" id="3_r0du0"]
+[ext_resource type="Script" uid="uid://xh5rrd31upqh" path="res://Scripts/Item.gd" id="4_3dxm6"]
+[ext_resource type="Texture2D" uid="uid://ccofwixarf6qp" path="res://Textures/Bag.png" id="4_cm0pq"]
+[ext_resource type="Texture2D" uid="uid://bl8rbdivety53" path="res://Textures/Phone.png" id="5_fos0i"]
+[ext_resource type="AudioStream" uid="uid://dpc6rnro8kofy" path="res://Music/Item Pick up (Counter Strike Source) - Sound Effect for editing.mp3" id="6_trn2v"]
+[ext_resource type="AudioStream" uid="uid://lh04yfh4nrf7" path="res://Music/But the Regrets Are Killing Me.mp3" id="7_lgr22"]
+
+[sub_resource type="Environment" id="Environment_glv2v"]
+background_mode = 1
+background_color = Color(0.22616917, 0.13537097, 0.07478366, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.21920988, 0.21918133, 0.1955525, 1)
+tonemap_mode = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+adjustment_brightness = 0.79
+
+[sub_resource type="BoxMesh" id="BoxMesh_uu6xs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fos0i"]
+
+[node name="Node3D" type="Node3D" unique_id=85141676]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1035620193]
+environment = SubResource("Environment_glv2v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=2110899483]
+transform = Transform3D(0.21895362, 0.25915545, -0.9406901, -0.01513596, 0.9648696, 0.26229373, 0.97561806, -0.043191914, 0.21518421, 0, 0, -6.237469)
+light_color = Color(1, 0.8, 0.52156866, 1)
+shadow_enabled = true
+
+[node name="Walls for fixing shadows" type="Node3D" parent="." unique_id=174602776]
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Walls for fixing shadows" unique_id=643676538]
+transform = Transform3D(7.8605676, 0, 0, 0, 6.128029, 0, 0, 0, 1, 1.667304, 0.49307895, -1.7165124)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls for fixing shadows/StaticBody3D2" unique_id=1493397755]
+mesh = SubResource("BoxMesh_uu6xs")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Walls for fixing shadows" unique_id=754673717]
+transform = Transform3D(7.8605676, 0, 0, 0, 6.128029, 0, 0, 0, 1, 1.667304, 0.49307895, 3.9248526)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls for fixing shadows/StaticBody3D3" unique_id=2038192564]
+mesh = SubResource("BoxMesh_uu6xs")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Walls for fixing shadows" unique_id=1375912647]
+transform = Transform3D(-1.5176117e-07, 0, 1, 0, 6.128029, 0, -3.4718907, 0, -4.371139e-08, -3.0955458, 0.49307895, 4.1872168)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls for fixing shadows/StaticBody3D4" unique_id=49456927]
+mesh = SubResource("BoxMesh_uu6xs")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Walls for fixing shadows" unique_id=785470386]
+transform = Transform3D(-1.5176117e-07, 0, 1, 0, 6.128029, 0, -3.4718907, 0, -4.371139e-08, -3.0955458, 0.49307895, -2.0462437)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls for fixing shadows/StaticBody3D5" unique_id=1648975921]
+mesh = SubResource("BoxMesh_uu6xs")
+
+[node name="Bedroom" parent="." unique_id=1054148307 instance=ExtResource("1_glv2v")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 5.7718277, 0.059571147, -0.39905357)
+
+[node name="FirstPersonCharacter" parent="." unique_id=1111919887 instance=ExtResource("2_uu6xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5778843, 1.1703166, 1.8227816)
+
+[node name="PickupSound" type="AudioStreamPlayer3D" parent="." unique_id=561272600]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3445804, 0.6657212, -0.6879417)
+stream = ExtResource("6_trn2v")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=431961874]
+stream = ExtResource("7_lgr22")
+volume_db = -21.55
+autoplay = true
+
+[node name="Label" type="Label" parent="." unique_id=1348148554]
+offset_right = 266.0
+offset_bottom = 23.0
+text = "Welcome to the bedroom showcase.
+Pick up the items for uni.
+The game will end when all items are picked up."
+
+[node name="Items" type="Node3D" parent="." unique_id=2126420706]
+unique_name_in_owner = true
+
+[node name="Item" type="StaticBody3D" parent="Items" unique_id=339317233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3445804, 0.6657212, -0.6879417)
+script = ExtResource("4_3dxm6")
+
+[node name="Sprite3D" type="Sprite3D" parent="Items/Item" unique_id=299977533]
+pixel_size = 0.002
+texture = ExtResource("4_cm0pq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Items/Item" unique_id=187096275]
+shape = SubResource("BoxShape3D_fos0i")
+
+[node name="Item2" type="StaticBody3D" parent="Items" unique_id=1407523216]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.6070623, 1.6594433, 0.8560587)
+script = ExtResource("4_3dxm6")
+
+[node name="Sprite3D" type="Sprite3D" parent="Items/Item2" unique_id=746093815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.060561657, 0)
+pixel_size = 0.0015
+texture = ExtResource("3_r0du0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Items/Item2" unique_id=1413497349]
+shape = SubResource("BoxShape3D_fos0i")
+
+[node name="Item3" type="StaticBody3D" parent="Items" unique_id=2096988031]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.0148768, 1.0960853, 1.2281787)
+script = ExtResource("4_3dxm6")
+
+[node name="Sprite3D" type="Sprite3D" parent="Items/Item3" unique_id=888088150]
+pixel_size = 0.001
+texture = ExtResource("5_fos0i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Items/Item3" unique_id=1394708183]
+shape = SubResource("BoxShape3D_fos0i")

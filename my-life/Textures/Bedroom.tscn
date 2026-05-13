@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://bx12qy7p1ocqh"]
+
+[ext_resource type="PackedScene" uid="uid://dsa4vgwg4dl7m" path="res://TestPhibsRoom.fbx" id="1_yaowb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yaowb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yaowb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ji2fj"]
+size = Vector3(1.6157227, 1, 1)
+
+[node name="Bedroom" type="Node3D" unique_id=1054148307]
+
+[node name="TestPhibsRoom" parent="." unique_id=92210716 instance=ExtResource("1_yaowb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.111797, 0.28172708, 8.100431)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TestPhibsRoom" unique_id=270634291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7487278, 2.5274005, -4.7908106)
+light_color = Color(1, 0.7294118, 0, 1)
+light_energy = 4.895
+shadow_enabled = true
+omni_range = 8.182
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="TestPhibsRoom" unique_id=1612130989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7928944, 3.8995495, 4.781637)
+light_color = Color(1, 0.8425399, 0.5591387, 1)
+light_energy = 4.895
+shadow_enabled = true
+omni_range = 4.605
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="TestPhibsRoom" unique_id=880802341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0875626, 3.4378414, -0.058169365)
+light_color = Color(0, 0.2509804, 0.9137255, 1)
+light_energy = 4.895
+shadow_enabled = true
+omni_range = 4.605
+
+[node name="Objects to stop light leak" type="Node3D" parent="." unique_id=812660067]
+transform = Transform3D(19.401323, 0, 0, 0, -0.15696007, -0.999982, 0, 26.142704, -0.006003864, -24.042192, 9.07735, 10.970173)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects to stop light leak" unique_id=512562783]
+mesh = SubResource("BoxMesh_yaowb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects to stop light leak/MeshInstance3D" unique_id=362129540]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects to stop light leak/MeshInstance3D/StaticBody3D" unique_id=570023522]
+shape = SubResource("BoxShape3D_yaowb")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Objects to stop light leak" unique_id=1073371400]
+transform = Transform3D(1, 0, 0, 0, -0.006003864, 0.03825021, 0, -26.142704, -0.006003864, 0, -0.3493786, 9.132354)
+mesh = SubResource("BoxMesh_yaowb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects to stop light leak/MeshInstance3D5" unique_id=193438685]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects to stop light leak/MeshInstance3D5/StaticBody3D" unique_id=1185919002]
+shape = SubResource("BoxShape3D_yaowb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Objects to stop light leak" unique_id=494570017]
+transform = Transform3D(1, 0, 0, 0, -0.006003864, 0.03825021, 0, -26.142704, -0.006003864, 0, 0.23492813, 9.040639)
+mesh = SubResource("BoxMesh_yaowb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects to stop light leak/MeshInstance3D2" unique_id=896667702]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects to stop light leak/MeshInstance3D2/StaticBody3D" unique_id=120725823]
+shape = SubResource("BoxShape3D_yaowb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Objects to stop light leak" unique_id=1978300671]
+transform = Transform3D(-0.0005060872, 0, 0.05154287, -0.74210465, -0.006003864, -1.935794e-05, 0.1164829, -26.142704, 3.0384786e-06, -0.4875375, -0.48392987, 9.153473)
+mesh = SubResource("BoxMesh_yaowb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects to stop light leak/MeshInstance3D3" unique_id=1308517619]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects to stop light leak/MeshInstance3D3/StaticBody3D" unique_id=231139278]
+shape = SubResource("BoxShape3D_yaowb")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Objects to stop light leak" unique_id=116179272]
+transform = Transform3D(-0.0005060872, 0, 0.05154287, -0.74210465, -0.006003864, -1.935794e-05, 0.1164829, -26.142704, 3.0384786e-06, -0.4875375, 0.4084434, 9.013404)
+mesh = SubResource("BoxMesh_yaowb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects to stop light leak/MeshInstance3D6" unique_id=1107314367]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects to stop light leak/MeshInstance3D6/StaticBody3D" unique_id=1647451805]
+shape = SubResource("BoxShape3D_yaowb")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Objects to stop light leak" unique_id=699302245]
+transform = Transform3D(-0.0005060872, 0, 0.05154287, -0.74210465, -0.006003864, -1.935794e-05, 0.1164829, -26.142704, 3.0384786e-06, 0.548301, -0.057373047, 9.086519)
+mesh = SubResource("BoxMesh_yaowb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects to stop light leak/MeshInstance3D4" unique_id=1278023337]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects to stop light leak/MeshInstance3D4/StaticBody3D" unique_id=1577095029]
+shape = SubResource("BoxShape3D_yaowb")
+
+[node name="Collisions" type="Node3D" parent="." unique_id=605850076]
+
+[node name="Collider" type="StaticBody3D" parent="Collisions" unique_id=2111579859]
+transform = Transform3D(8.1616125, 0, 0, 0, 14.142422, 0, 0, 0, 5.359561, -24.285418, 2.2958784, 4.628979)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Collider" unique_id=1507731382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41780162, 0, 0)
+shape = SubResource("BoxShape3D_ji2fj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Collisions/Collider" unique_id=1698797394]
+transform = Transform3D(0.19522624, 0, 0, 0, 1, 0, 0, 0, 0.27013794, 0.1510644, 0, -0.21515232)
+shape = SubResource("BoxShape3D_ji2fj")
+
+[node name="Collider2" type="StaticBody3D" parent="Collisions" unique_id=875885857]
+transform = Transform3D(3.1693852, 0, 0, 0, 14.142422, 0, 0, 0, 5.359561, -15.673016, 2.2958784, 6.87415)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Collider2" unique_id=452142023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41780162, 0, 0)
+shape = SubResource("BoxShape3D_ji2fj")
+
+[node name="Collider3" type="StaticBody3D" parent="Collisions" unique_id=1894724400]
+transform = Transform3D(17.114916, 0, 0, 0, 14.142422, 0, 0, 0, 2.5572884, -19.352528, 2.2958784, 12.811287)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Collider3" unique_id=1993845860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41780162, 0, 0)
+shape = SubResource("BoxShape3D_ji2fj")
+
+[node name="Collider4" type="StaticBody3D" parent="Collisions" unique_id=1979338440]
+transform = Transform3D(2.2726035, 0, 0, 0, 14.142422, 0, 0, 0, 1.694764, -28.478888, 2.2958784, 8.099605)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Collider4" unique_id=1106008159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41780162, 0, 0)
+shape = SubResource("BoxShape3D_ji2fj")
+
+[node name="Collider5" type="StaticBody3D" parent="Collisions" unique_id=1900625985]
+transform = Transform3D(2.2726035, 0, 0, 0, 14.142422, 0, 0, 0, 12.073575, -30.643154, 2.2958784, 8.099605)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Collider5" unique_id=1655588885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41780162, 0, 0)
+shape = SubResource("BoxShape3D_ji2fj")
+
+[node name="Collider6" type="StaticBody3D" parent="Collisions" unique_id=1262501731]
+transform = Transform3D(2.2726035, 0, 0, 0, 14.142422, 0, 0, 0, 12.073575, -14.455893, 2.2958784, 8.099605)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Collider6" unique_id=1824225130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41780162, 0, 0)
+shape = SubResource("BoxShape3D_ji2fj")
+
+[node name="Collider7" type="StaticBody3D" parent="Collisions" unique_id=940643652]
+transform = Transform3D(21.87916, 0, 0, 0, 0.50773495, 0, 0, 0, 67.3248, -18.102585, 0.116401315, 8.099605)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Collider7" unique_id=951504944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41780162, 0, 0)
+shape = SubResource("BoxShape3D_ji2fj")
